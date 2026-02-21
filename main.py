@@ -13,6 +13,7 @@ def menu():
     
 def create():
     t=input("Name of Task: ")
+    t=t.strip().lower()
     Todo[t]=0
  
     
@@ -21,7 +22,8 @@ def list():
         print(i)
 
 def complete():
-    x= input("Name of TAsk you want to mark complete: ")
+    x= input("Name of Task you want to mark complete: ")
+    x=x.strip().lower()
     if x in Todo:
         if  Todo[x]==1:
             print("already completed")
@@ -31,6 +33,8 @@ def complete():
             print(f"{x} marked completed")
 def delete():
     x=input("Enter task name you want to delete: ")
+    x=x.strip().lower()
+
     if x in Todo:
         Todo.pop(x)
         print("deleted")
